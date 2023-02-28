@@ -1,4 +1,5 @@
 <template>
+    <p>dayat kontol</p>
     <v-app id="inspire">
         <v-navigation-drawer v-model="drawer">
             <v-list density="compact">
