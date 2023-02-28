@@ -2,55 +2,64 @@
     <div class="mx-10 my-10 text-right">
         <v-dialog v-model="dialog_insert">
             <template v-slot:activator="{ props }">
-                <v-btn prepend-icon="mdi-plus" color="primary" rounded v-bind="props">
-                    Tambah
+                <v-btn v-bind="props" color="green">
+
+                        <v-icon icon="mdi-contrast"></v-icon>
+
                 </v-btn>
             </template>
 
             <v-card>
                 <v-card-text>
-                    <p style="font-size: 20px; margin-bottom: 5px; margin-top: -5px;" class="text-center">Isi Data</p>
+                    <p style="font-size: 20px; margin-bottom: 5px; margin-top: -5px;" class="text-center">TAMBAH DATA</p>
                     <v-form>
-                        <v-text-field v-model="form.nama" label="Nama Lengkap" variant="outlined" clearable
+                        <v-text-field v-model="form.nama" label="NAMA" variant="outlined" clearable
                             :error-messages="errors.nama"></v-text-field>
                         <v-text-field v-model="form.nik" label="NIK" variant="outlined" clearable></v-text-field>
-                        <v-text-field v-model="form.tlp" label="No. Telpon" variant="outlined" clearable
+                        <v-text-field v-model="form.tlp" label="NOMOR TELEPON" variant="outlined" clearable
                             :error-messages="errors.tlp"></v-text-field>
-                        <v-text-field v-model="form.username" label="Username" variant="outlined" clearable
+                        <v-text-field v-model="form.username" label="USERNAME" variant="outlined" clearable
                             :error-messages="errors.username"></v-text-field>
-                        <v-text-field v-model="form.password" label="Password" variant="outlined" clearable
+                        <v-text-field v-model="form.password" label="PASSWORD" variant="outlined" clearable
                             :error-messages="errors.password"></v-text-field>
-                        <v-select v-model="form.level" :items="['admin', 'petugas', 'masyarakat']" label="Level"
+                        <v-select v-model="form.level" :items="['admin', 'petugas', 'masyarakat']" label="LEVEL"
                             variant="outlined" :error-messages="errors.level"></v-select>
                     </v-form>
                 </v-card-text>
                 <v-card-actions>
-                    <v-btn color="primary" inline @click="batal">Batal</v-btn>
-                    <v-btn color="primary" inline @click="simpan">Simpan</v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn color="red" inline @click="batal">Batal</v-btn>
+                    <v-btn color="green" inline @click="simpan">Simpan</v-btn>
+
                 </v-card-actions>
             </v-card>
         </v-dialog>
         <v-dialog v-model="dialog_hapus" width="300">
             <v-card>
-                <v-card-text>apakah anda ingin menghapus</v-card-text>
+
+                <v-card-text class="text-center">
+                    HAPUS? YAKIN?
+
+                </v-card-text>
                 <v-card-actions>
-                    <center>
-                        <v-btn color="primary" @click="batal">Tidak</v-btn>
-                        <v-btn color="red" @click="hapus">Ya</v-btn>
-                    </center>
+                    <v-spacer></v-spacer>
+                        <v-btn color="red" @click="batal">Tidak</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn color="green" @click="hapus">Ya</v-btn>
+                    <v-spacer></v-spacer>
                 </v-card-actions>
             </v-card>
         </v-dialog>
         <v-table class="mx-10 my-10 text-left">
             <thead class="bg-grey">
                 <tr>
-                    <th>No</th>
-                    <th>Nama</th>
+                    <th>#</th>
+                    <th>NAMA</th>
                     <th>NIK</th>
-                    <th>Username</th>
-                    <th>No. Handphone</th>
-                    <th>Role</th>
-                    <th>Aksi</th>
+                    <th>USERNAME</th>
+                    <th>NO TELEPON</th>
+                    <th>ROLE</th>
+                    <th>AKSI</th>
                 </tr>
             </thead>
             <tbody>

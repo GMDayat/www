@@ -1,7 +1,6 @@
-., [20 Feb 2023 13.47.04]:
 <template>
-    <div>
-        <v-btn @click="tableToExcel('table', 'Lorem Table')">Download</v-btn>
+    <div class="mx-10 my-10 text-right">
+        <v-btn @click="tableToExcel('table', 'Lorem Table')" color="blue"><v-icon icon="mdi-format-vertical-align-bottom"></v-icon></v-btn>
     </div>
     <v-table>
         <thead>

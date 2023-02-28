@@ -1,11 +1,11 @@
 <template>
-    <div class="mt-3 mb-3 ml-3">
+    <div class="mx-10 my-10 text-right">
         <!-- <v-btn class="button"  @click="tableToExcel('table', 'Lorem Table')">
             <span class="button-content">Download</span>
         </v-btn> -->
 
         <div>
-        <v-btn @click="tableToExcel('table', 'Lorem Table')">Download</v-btn>
+        <v-btn @click="tableToExcel('table', 'Lorem Table')" color="blue"><v-icon icon="mdi-format-vertical-align-bottom"></v-icon></v-btn>
     </div>
 
 
@@ -20,8 +20,8 @@
             button
         </button> -->
     </div>
-    <v-table class='mt-5'>
-        <thead class='bg-blue text-subtitle-1 '>
+    <v-table class="mx-10 my-10 text-left">
+        <thead  class="bg-grey">
             <tr>
                 <th>#</th>
                 <th>NIK</th>

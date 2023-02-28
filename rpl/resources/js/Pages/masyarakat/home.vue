@@ -12,7 +12,8 @@
                         </v-list-item-subtitle>
                         <v-list-subtitle>
                             <span v-if="row.status == '0'" class="text-red">Status : Belum diproses</span>
-                            <span v-else class="text-red">Status : {{ row.status }}</span>
+                            <span v-if="row.status=='proses'" class="text-orange">Status : {{ row.status }}</span>
+                            <span v-if="row.status=='selesai'" class="text-green">Status : {{ row.status }}</span>
                         </v-list-subtitle>
                         <v-divider />
                         <v-item-subtitle class="mt-3">

@@ -1,46 +1,46 @@
 <template>
-  <h1>ini register</h1>
+    <div class="mx-10 my-10 text-right">
+    <v-table class="mx-10 my-10 text-left">
+        <thead class="bg-grey">
+            <tr>
+                <th>#</th>
+                <th>NAMA</th>
+                <th>NIK</th>
+                <th>USERNAME</th>
+                <th>NO TELEPON</th>
+                <th>AKSI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(row, i) in reg" :key="i++">
+                <td>{{ i }}</td>
+                <td>{{ row.nama }}</td>
+                <td>{{ row.nik }}</td>
+                <td>{{ row.username }}</td>
+                <td>{{ row.tlp }}</td>
 
-  <v-table class="mx-10 my-10 text-left">
-            <thead class="bg-grey">
-                <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>NIK</th>
-                    <th>Username</th>
-                    <th>No. Handphone</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(row, i) in reg" :key="i++">
-                    <td>{{ i }}</td>
-                    <td>{{ row.nama }}</td>
-                    <td>{{ row.nik }}</td>
-                    <td>{{ row.username }}</td>
-                    <td>{{ row.tlp }}</td>
-
-                    <td>
-                        <v-btn color="primary" @click="Konfirmasi(row.id)">konfirmasi</v-btn>
-                    </td>
-                </tr>
-            </tbody>
-        </v-table>
+                <td>
+                    <v-btn color="primary" @click="Konfirmasi(row.id)">konfirmasi</v-btn>
+                </td>
+            </tr>
+        </tbody>
+    </v-table>
+    </div>
 </template>
 
 <script>
-import {router} from '@inertiajs/vue3';
+import { router } from '@inertiajs/vue3';
 import layout from '../../layout/layout.vue'
-export default{
-    props:{
-        reg:Array
+export default {
+    props: {
+        reg: Array
     },
-    layout:layout,
-   methods:{
-        Konfirmasi($id){
-            router.visit('/admin/register/'+$id,{
-                method:'get',
-                preserveState:true,
+    layout: layout,
+    methods: {
+        Konfirmasi($id) {
+            router.visit('/admin/register/' + $id, {
+                method: 'get',
+                preserveState: true,
                 preserveScroll: true,
             })
         }
@@ -48,6 +48,4 @@ export default{
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

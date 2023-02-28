@@ -26,8 +26,9 @@
                             <p v-html="row.isi"></p>
                         </v-list-item-subtitle>
                         <v-list-item-subtitle>
-                            <span v-if="row.status == '0'" class="text-blue">Status: Belum Diproses</span>
-                            <span v-else class="text-blue">Status: {{ row.status }}</span>
+                            <span v-if="row.status == '0'" class="text-red">Status : Belum diproses</span>
+                            <span v-if="row.status=='proses'" class="text-orange">Status : {{ row.status }}</span>
+                            <span v-if="row.status=='selesai'" class="text-green">Status : {{ row.status }}</span>
                         </v-list-item-subtitle>
 
                         <v-list-item-subtitle>
